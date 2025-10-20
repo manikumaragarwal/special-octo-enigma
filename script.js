@@ -4,6 +4,7 @@ let humanChoice = getHumanChoice().toLowerCase();
 let humanScore = 0;
 let computerScore = 0;
 
+let gameState = "";
 
 // function to let computer make a choice.
 function getComputerChoice() {
@@ -25,34 +26,44 @@ function getHumanChoice() {
 }
 
 
-// The Game LOGIC 
+// SINGLE round Game LOGIC.
 function playRound(humanChoice, computerChoice) {
   if (humanChoice == "rock" && computerChoice == "rock") {
-    console.log(`Draw!: ${humanChoice} draws ${computerChoice}`)
+    gameState = "Draw";
+    console.log(`${gameState}!: ${humanChoice} draws ${computerChoice}`)
   }
   else if (humanChoice == "rock" && computerChoice == "paper") {
-    console.log(`You Lost! : ${humanChoice} defeated by ${computerChoice}`)
+
+    gameState = "Lost";
+    console.log(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
   }
   else if (humanChoice == "rock" && computerChoice == "scissors") {
-    console.log(`You Won! : ${humanChoice} defeats ${computerChoice}`)
+    gameState = "Won"
+    console.log(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
   }
   else if (humanChoice == "paper" && computerChoice == "rock") {
-    console.log(`You Won! : ${humanChoice} defeats ${computerChoice}`)
+    gameState = "Won"
+    console.log(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
   }
   else if (humanChoice == "paper" && computerChoice == "paper") {
-    console.log(`Draw! : ${humanChoice} draws ${computerChoice}`)
+    gameState = "Draw"
+    console.log(`${gameState}! : ${humanChoice} draws ${computerChoice}`)
   }
   else if (humanChoice == "paper" && computerChoice == "scissors") {
-    console.log(`You Lost! : ${humanChoice} defeated by ${computerChoice}`)
+    gameState = "Lost"
+    console.log(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
   }
   else if (humanChoice == "scissors" && computerChoice == "rock") {
-    console.log(`You Lost! : ${humanChoice} defeated by ${computerChoice}`)
+    gameState = "Lost"
+    console.log(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
   }
   else if (humanChoice == "scissors" && computerChoice == "paper") {
-    console.log(`You Win! : ${humanChoice} defeats ${computerChoice}`)
+    gameState = "Won"
+    console.log(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
   }
   else {
-    console.log(`Draw! : ${humanChoice} draws ${computerChoice}`)
+    gameState = "Draw"
+    console.log(`${gameState}! : ${humanChoice} draws ${computerChoice}`)
   }
 }
 
@@ -60,3 +71,7 @@ playRound(humanChoice, computerChoice);
 
 
 
+// ENTIRE Game LOGIC.
+for (let index = 0; index < 5; index++) {
+
+}
