@@ -1,6 +1,8 @@
 let computerChoice = "";
 let caseSensitiveHumanChoice = prompt("Enter your Choice : Rock, Paper, Scissors");
-let humanChoice = caseSensitiveHumanChoice.toLocaleLowerCase();
+let humanChoice = caseSensitiveHumanChoice.toLowerCase();
+let humanScore = 0;
+let computerScore = 0;
 
 
 function getComputerChoice() {
@@ -15,3 +17,35 @@ function getComputerChoice() {
 }
 getComputerChoice();
 
+// The Game LOGIC 
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice == "rock" && computerChoice == "rock") {
+    console.log(`Draw!: ${humanChoice} draws ${computerChoice}`)
+  }
+  else if (humanChoice == "rock" && computerChoice == "paper") {
+    console.log(`You Lost! : ${humanChoice} defeated by ${computerChoice}`)
+  }
+  else if (humanChoice == "rock" && computerChoice == "scissors") {
+    console.log(`You Won! : ${humanChoice} defeats ${computerChoice}`)
+  }
+  else if (humanChoice == "paper" && computerChoice == "rock") {
+    console.log(`You Won! : ${humanChoice} defeats ${computerChoice}`)
+  }
+  else if (humanChoice == "paper" && computerChoice == "paper") {
+    console.log(`Draw! : ${humanChoice} draws ${computerChoice}`)
+  }
+  else if (humanChoice == "paper" && computerChoice == "scissors") {
+    console.log(`You Lost! : ${humanChoice} defeated by ${computerChoice}`)
+  }
+  else if (humanChoice == "scissors" && computerChoice == "rock") {
+    console.log(`You Lost! : ${humanChoice} defeated by ${computerChoice}`)
+  }
+  else if (humanChoice == "scissors" && computerChoice == "paper") {
+    console.log(`You Win! : ${humanChoice} defeats ${computerChoice}`)
+  }
+  else {
+    console.log(`Draw! : ${humanChoice} draws ${computerChoice}`)
+  }
+}
+
+playRound(humanChoice, computerChoice);
