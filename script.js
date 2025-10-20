@@ -1,21 +1,29 @@
-let computerChoice = "";
-let caseSensitiveHumanChoice = prompt("Enter your Choice : Rock, Paper, Scissors");
-let humanChoice = caseSensitiveHumanChoice.toLowerCase();
+const computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice().toLowerCase();
+
 let humanScore = 0;
 let computerScore = 0;
 
 
+// function to let computer make a choice.
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
   if (randomNumber === 1) {
-    computerChoice = "rock";
+    computerSelection = "rock";
   } else if (randomNumber == 2) {
-    computerChoice = "paper";
+    computerSelection = "paper";
   } else {
-    computerChoice = "scissors";
+    computerSelection = "scissors";
   }
+  return computerSelection;
 }
-getComputerChoice();
+
+// function to let human make a choice.
+function getHumanChoice() {
+  const HumanSelection = prompt("Enter your Choice : Rock, Paper, Scissors");
+  return HumanSelection;
+}
+
 
 // The Game LOGIC 
 function playRound(humanChoice, computerChoice) {
@@ -49,3 +57,6 @@ function playRound(humanChoice, computerChoice) {
 }
 
 playRound(humanChoice, computerChoice);
+
+
+
