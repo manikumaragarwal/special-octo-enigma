@@ -1,11 +1,3 @@
-const computerChoice = getComputerChoice();
-let humanChoice = getHumanChoice().toLowerCase();
-
-let humanScore = 0;
-let computerScore = 0;
-
-let gameState = "";
-
 // function to let computer make a choice.
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -33,7 +25,6 @@ function playRound(humanChoice, computerChoice) {
     console.log(`${gameState}!: ${humanChoice} draws ${computerChoice}`)
   }
   else if (humanChoice == "rock" && computerChoice == "paper") {
-
     gameState = "Lost";
     console.log(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
   }
@@ -65,13 +56,36 @@ function playRound(humanChoice, computerChoice) {
     gameState = "Draw"
     console.log(`${gameState}! : ${humanChoice} draws ${computerChoice}`)
   }
+  return gameState;
 }
 
-playRound(humanChoice, computerChoice);
 
 
+
+let humanScore = 0;
+let computerScore = 0;
+let gameState = "";
 
 // ENTIRE Game LOGIC.
-for (let index = 0; index < 5; index++) {
+function playGame() {
+  for (let index = 0; index < 5; index++) {
+    const computerChoice = getComputerChoice();
+    const humanChoice = getHumanChoice().toLowerCase();
+
+
+    const results = playRound(humanChoice, computerChoice);
+    scoreCounting(results)
+
+  }
 
 }
+
+function scoreCounting(gameState) {
+  if (gameState == "Won") {
+    humanScore++;
+  } else if (gameState == "Lost") {
+    computerScore++;
+  }
+}
+
+playGame();
