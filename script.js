@@ -23,38 +23,47 @@ function playRound(humanChoice, computerChoice) {
   if (humanChoice == "rock" && computerChoice == "rock") {
     gameState = "Draw";
     console.log(`${gameState}!: ${humanChoice} draws ${computerChoice}`)
+    alert(`${gameState}!: ${humanChoice} draws ${computerChoice}`)
   }
   else if (humanChoice == "rock" && computerChoice == "paper") {
     gameState = "Lost";
     console.log(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
+    alert(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
   }
   else if (humanChoice == "rock" && computerChoice == "scissors") {
     gameState = "Won"
     console.log(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
+    alert(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
   }
   else if (humanChoice == "paper" && computerChoice == "rock") {
     gameState = "Won"
     console.log(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
+    alert(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
   }
   else if (humanChoice == "paper" && computerChoice == "paper") {
     gameState = "Draw"
     console.log(`${gameState}! : ${humanChoice} draws ${computerChoice}`)
+    alert(`${gameState}! : ${humanChoice} draws ${computerChoice}`)
   }
   else if (humanChoice == "paper" && computerChoice == "scissors") {
     gameState = "Lost"
     console.log(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
+    alert(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
   }
   else if (humanChoice == "scissors" && computerChoice == "rock") {
     gameState = "Lost"
     console.log(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
+    alert(`You ${gameState}! : ${humanChoice} defeated by ${computerChoice}`)
   }
   else if (humanChoice == "scissors" && computerChoice == "paper") {
     gameState = "Won"
     console.log(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
+    alert(`You ${gameState}! : ${humanChoice} defeats ${computerChoice}`)
   }
   else {
     gameState = "Draw"
     console.log(`${gameState}! : ${humanChoice} draws ${computerChoice}`)
+    alert(`${gameState}! : ${humanChoice} draws ${computerChoice}`)
   }
   return gameState;
 }
@@ -77,6 +86,8 @@ function playGame() {
     scoreCounting(results)
 
   }
+  console.log(`humanScore: ${humanScore} v/s computerScore: ${computerScore}`)
+  alert(`humanScore: ${humanScore} | computerScore: ${computerScore}`)
 
 }
 
